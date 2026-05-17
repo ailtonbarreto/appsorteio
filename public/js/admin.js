@@ -31,28 +31,8 @@ function handleSocketClose() {
   setTimeout(connectWebSocket, 5000);
 }
 
-function updateAdminClientCount() {
-  const activeClients = Array.from(wss.clients).filter(
-    (client) =>
-      !client.isAdmin &&
-      client.readyState === WebSocket.OPEN
-  );
-
-  const clientCount = activeClients.length;
-
-  Array.from(wss.clients).forEach((client) => {
-    if (
-      client.isAdmin &&
-      client.readyState === WebSocket.OPEN
-    ) {
-      client.send(
-        JSON.stringify({
-          action: ACTIONS.CLIENT_COUNT_UPDATE,
-          count: clientCount,
-        })
-      );
-    }
-  });
+function updateClientCount(count) {
+  document.getElementById("clientCount").innerText = count;
 }
 
 function generateCode(length) {
