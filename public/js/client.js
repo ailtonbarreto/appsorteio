@@ -48,3 +48,7 @@ function vibratePhone(timeMs) {
     navigator.vibrate(timeMs);
   }
 }
+
+window.addEventListener("beforeunload", () => {
+  socket.close();
+});
