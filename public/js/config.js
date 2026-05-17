@@ -1,8 +1,4 @@
-
-const WS_URL =
-  `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}`;
-
-const ws = new WebSocket(WS_URL);
+const WS_URL = "ws://127.0.0.1:3000";
 
 const STATUS = {
   WIN: "youwin",
