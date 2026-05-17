@@ -28,7 +28,7 @@ function handleSocketError(error) {
 
 function handleSocketClose() {
   console.log("Websocket fechado. Tentando reconectar em 5 segundos...");
-  setTimeout(connectWebSocket(), 5000);
+  new WebSocket(WS_URL);
 }
 
 function updateClientCount(count) {
