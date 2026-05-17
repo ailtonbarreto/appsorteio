@@ -1,4 +1,6 @@
-const WS_URL = "ws://192.168.0.101:3000";
+const WS_URL =
+  (window.location.protocol === "https:" ? "wss://" : "ws://") +
+  window.location.host;
 
 const STATUS = {
   WIN: "youwin",
